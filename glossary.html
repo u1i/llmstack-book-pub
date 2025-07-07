@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Glossary – The LLM Stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0 1rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; }
+    nav { margin: 2rem 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+    nav a { text-decoration: none; color: #007acc; }
+    nav a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+    .box { background:#f9f9f9; padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+    .license pre { background:#f0f0f0; padding:1rem; overflow:auto; }
+    h1, h2, h3 { color: #333; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem; }
+</style>
+</head>
+<body>
+<nav><a href='index.html'>Home</a> | <a href='bonus-chapter-staying-in-control.html' title='Bonus Chapter: Staying in Control'>← Bonus</a> | <a href='about-the-author.html' title='About the Author'>About the Author →</a></nav>
+<main><h1 id="glossary">Glossary</h1>
+<h2 id="a">A</h2>
+<p><strong>Agent Frameworks</strong>: Software that helps AI coordinate complex, multi-step tasks. Think of them as project managers for AI – breaking down big goals, choosing the right tools, and handling errors when things go wrong.</p>
+<p><strong>API (Application Programming Interface)</strong>: The direct line to AI models, bypassing all the packaging of chat apps. Send a request, get a response, with full control over all the settings.</p>
+<p><strong>API Key</strong>: Your secret password for accessing AI services. Like a phone number that only you should know.</p>
+<p><strong>Attention Mechanism</strong>: The Transformer's breakthrough feature that lets AI understand how words relate to each other across entire sentences. Every word can "look at" every other word simultaneously.</p>
+<p><strong>Augmentation</strong>: Giving AI superpowers beyond its training – access to current information, databases, tools, and the ability to take actions in the real world.</p>
+<p><strong>Autoregressive Generation</strong>: How AI writes – one token at a time, with each new token based on everything that came before. Like building a sentence where each word must fit perfectly with all previous words.</p>
+<h2 id="b">B</h2>
+<p><strong>Base Models</strong>: The wild, untamed version of LLMs. Trained on massive text but not taught manners. They complete text rather than follow instructions, and might say anything.</p>
+<p><strong>Batch Inference</strong>: Processing multiple AI requests together. Efficient but not real-time.</p>
+<p><strong>Benchmarks</strong>: Standardized tests for AI models (MMLU, HumanEval, etc.). Useful for comparison but often poor predictors of real-world usefulness.</p>
+<p><strong>Bias (in AI)</strong>: Unfair prejudices AI learns from its training data. A major safety concern requiring active detection and mitigation.</p>
+<h2 id="c">C</h2>
+<p><strong>Chain-of-Thought (CoT)</strong>: A prompting technique where you ask AI to "think step by step." Often dramatically improves performance on complex problems.</p>
+<p><strong>Claude</strong>: Anthropic's family of AI models, known for thoughtful responses and strong safety features. Comes in Opus (powerful), Sonnet (balanced), and Haiku (fast) versions.</p>
+<p><strong>Closed-source Models</strong>: AI models accessed only through APIs, where the weights and training details are kept secret. You rent, not own.</p>
+<p><strong>Context Window</strong>: How much text an AI can "see" at once – including your prompt, conversation history, and its response. Like the size of the AI's desk.</p>
+<p><strong>Concept Drift</strong>: When the world changes but your AI's knowledge doesn't. A model trained in 2023 won't know about events in 2024.</p>
+<h2 id="d">D</h2>
+<p><strong>Data Drift</strong>: When the types of questions users ask start differing from what the model was trained on.</p>
+<p><strong>Decode Phase</strong>: The second part of inference where AI generates its response token by token.</p>
+<p><strong>Decoder-only Architecture</strong>: The design used by most modern generative AI (GPT, Claude, Gemini). Optimized for generating text rather than translating between languages.</p>
+<h2 id="e">E</h2>
+<p><strong>Embeddings</strong>: Mathematical representations of text meaning. How AI converts words into numbers it can search and compare.</p>
+<p><strong>End-of-Sequence (EOS) Token</strong>: The special token that tells AI to stop generating. Without it, AI would ramble forever.</p>
+<p><strong>Evaluation</strong>: Systematic assessment of AI performance, safety, and reliability. The quality control department for AI.</p>
+<h2 id="f">F</h2>
+<p><strong>Few-shot Prompting</strong>: Providing examples in your prompt to show AI exactly what you want. Like teaching by demonstration.</p>
+<p><strong>Fine-tuning</strong>: Continuing to train a pre-trained model on specialized data. Taking a generalist and making it an expert in your specific domain.</p>
+<p><strong>Full Fine-tuning</strong>: Retraining all parameters of a model. Powerful but expensive – like sending someone back to university.</p>
+<p><strong>Function Calling</strong>: Giving AI the ability to use tools and take actions. Transforms AI from a thinker to a doer.</p>
+<h2 id="g">G</h2>
+<p><strong>Gemini</strong>: Google's family of AI models. Includes Pro (powerful) and Flash (fast and efficient) versions.</p>
+<p><strong>GPT (Generative Pre-trained Transformer)</strong>: OpenAI's model family. GPT-4 remains highly capable despite newer releases.</p>
+<p><strong>Guardrails</strong>: Safety filters that block harmful AI inputs or outputs. The safety fence around AI systems.</p>
+<h2 id="h">H</h2>
+<p><strong>Hallucination</strong>: When AI confidently makes things up. A fundamental challenge since AI generates plausible-sounding text whether it's true or not.</p>
+<p><strong>Human Evaluation</strong>: The gold standard for assessing AI quality. Automated metrics help, but humans judge what really matters.</p>
+<h2 id="i">I</h2>
+<p><strong>Inference</strong>: The process of using a trained model to generate responses. What happens when you actually use AI.</p>
+<p><strong>Instruct Models</strong>: LLMs fine-tuned to follow instructions helpfully and safely. The polite, helpful versions of base models.</p>
+<p><strong>Instruction Fine-tuning</strong>: Teaching models to follow commands through examples of good behavior. How wild base models become helpful assistants.</p>
+<h2 id="k">K</h2>
+<p><strong>Key (K)</strong>: In attention mechanisms, represents "what information do I have to offer?" Part of the Query-Key-Value system.</p>
+<p><strong>KV Cache</strong>: Optimization that stores previous calculations during text generation. Why AI can maintain long conversations efficiently.</p>
+<h2 id="l">L</h2>
+<p><strong>LangChain</strong>: Popular framework for building AI applications, especially those using RAG or agents.</p>
+<p><strong>Large Language Model (LLM)</strong>: AI systems trained on massive text datasets to understand and generate language. The technology behind ChatGPT, Claude, and others.</p>
+<p><strong>LLaMA</strong>: Meta's family of open-source models. Democratized AI by making powerful models freely available.</p>
+<p><strong>LoRA (Low-Rank Adaptation)</strong>: Efficient fine-tuning technique that adds small "adapter" modules instead of retraining the whole model. Like Post-It notes on encyclopedia pages.</p>
+<h2 id="m">M</h2>
+<p><strong>Max Tokens</strong>: Limit on how much text AI can generate in one response. Prevents infinite rambling.</p>
+<p><strong>MCP (Model Context Protocol)</strong>: Anthropic's universal standard for how AI connects to tools and data. Like USB-C for AI integrations.</p>
+<p><strong>Multi-Head Attention</strong>: Running attention mechanisms multiple times in parallel, each focusing on different aspects (grammar, meaning, tone, etc.).</p>
+<p><strong>Multimodal Models</strong>: AI that handles multiple types of input/output – text, images, audio, video. Not just reading and writing anymore.</p>
+<h2 id="o">O</h2>
+<p><strong>Open-source Models</strong>: Models with publicly available weights you can download and run yourself. Full control but requires your own hardware.</p>
+<p><strong>Output Control Parameters</strong>: Settings that shape AI responses – temperature, top-p, max length, etc. The dials and knobs for fine-tuning output.</p>
+<h2 id="p">P</h2>
+<p><strong>Parameter-Efficient Fine-Tuning (PEFT)</strong>: Techniques for adapting models by training only a small fraction of parameters. Gets 95% of results with 5% of the effort.</p>
+<p><strong>Parameters</strong>: The billions of numbers inside a model that encode its knowledge. More parameters generally means more capability but also more cost.</p>
+<p><strong>Perplexity</strong>: Metric measuring how "surprised" a model is by text. Lower is better – indicates better understanding.</p>
+<p><strong>Positional Embeddings</strong>: How AI remembers word order when processing everything simultaneously. Like seat numbers at a theater.</p>
+<p><strong>Prefill Phase</strong>: First part of inference where AI rapidly processes your entire prompt to understand context.</p>
+<p><strong>Prompt Engineering</strong>: The art and science of crafting effective AI inputs. Learning to speak AI's language.</p>
+<p><strong>Prompting</strong>: The basic act of giving instructions to AI. The quality of your prompt largely determines the quality of the output.</p>
+<h2 id="q">Q</h2>
+<p><strong>QLoRA</strong>: Even more efficient than LoRA – compresses the main model while adding adapters. Maximum efficiency for fine-tuning.</p>
+<p><strong>Quantization</strong>: Reducing model precision to save memory and increase speed. Like compressing a photo – slightly lower quality but much smaller file.</p>
+<p><strong>Query (Q)</strong>: In attention mechanisms, represents "what information am I looking for?" Works with Keys and Values.</p>
+<h2 id="r">R</h2>
+<p><strong>RAG (Retrieval-Augmented Generation)</strong>: Automatically finding and injecting relevant information into AI prompts. Like giving AI a research assistant.</p>
+<p><strong>Rate Limits</strong>: Restrictions on how many API requests you can make. Prevents overwhelming the service.</p>
+<p><strong>Reasoning Models</strong>: Latest evolution of AI that can work through problems step-by-step and check their own logic. Think before they speak.</p>
+<p><strong>Red-teaming</strong>: Security experts trying to break AI safety features. Ethical hacking for AI systems.</p>
+<p><strong>Reinforcement Learning from Human Feedback (RLHF)</strong>: Teaching AI to be helpful by learning from human preferences. How models learn manners.</p>
+<h2 id="s">S</h2>
+<p><strong>Stop Sequences</strong>: Specific text that makes AI immediately stop generating. The emergency brake.</p>
+<p><strong>Streaming</strong>: Getting AI responses word-by-word as they're generated. Like watching someone type rather than waiting for the full message.</p>
+<p><strong>Supervised Fine-Tuning (SFT)</strong>: Training models on labeled examples. The foundation of most fine-tuning efforts.</p>
+<p><strong>System Prompt</strong>: Hidden instructions that shape AI behavior throughout a conversation. The personality and rules you never see in chat apps.</p>
+<h2 id="t">T</h2>
+<p><strong>Temperature</strong>: Controls randomness in AI responses. Low = predictable and safe. High = creative and wild.</p>
+<p><strong>Token</strong>: The basic unit AI processes – usually parts of words. "Unbelievable" might be "un-believ-able" in tokens.</p>
+<p><strong>Tokenization</strong>: Breaking text into tokens. How AI converts human language into something it can process.</p>
+<p><strong>Top-P (Nucleus Sampling)</strong>: Another randomness control. Affects vocabulary diversity rather than overall wildness.</p>
+<p><strong>Transformer Architecture</strong>: The revolutionary design behind all modern LLMs. Enables understanding of long-range word relationships.</p>
+<h2 id="v">V</h2>
+<p><strong>Value (V)</strong>: In attention mechanisms, the actual information content. Works with Queries and Keys to create understanding.</p>
+<p><strong>Vector Database</strong>: Specialized storage for embeddings. Enables semantic search – finding documents by meaning, not just keywords.</p>
+<h2 id="z">Z</h2>
+<p><strong>Zero-shot Prompting</strong>: Asking AI to do something without providing examples. Just throwing a question and hoping for the best.</p></main>
+<nav><a href='index.html'>Home</a> | <a href='bonus-chapter-staying-in-control.html' title='Bonus Chapter: Staying in Control'>← Bonus</a> | <a href='about-the-author.html' title='About the Author'>About the Author →</a></nav>
+<hr><div class='license'><h2>License</h2><pre style='white-space:pre-wrap; font-size:0.9em'>© 2025 Uli Hitzel  
+
+This book is released under the Creative Commons Attribution–NonCommercial 4.0 International license (CC BY-NC 4.0).  
+You may copy, distribute, and adapt the material for any non-commercial purpose, provided you give appropriate credit, include a link to the license, and indicate if changes were made. For commercial uses, please contact the author.</pre></div>
+</body>
+</html>
