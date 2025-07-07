@@ -14,7 +14,9 @@
     nav a:hover { text-decoration: underline; }
     img { max-width: 100%; height: auto; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     .box { background:#f9f9f9; padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+    .license pre { background:#f0f0f0; padding:1rem; overflow:auto; }
     h1, h2, h3 { color: #333; }
     table { border-collapse: collapse; width: 100%; }
     th, td { border: 1px solid #ddd; padding: 0.5rem; }
@@ -136,5 +138,9 @@
 <p>Most organizations benefit more from learning to use general models effectively than rushing to create specialized ones. Master the basics first, then specialize when you have a clear need and good data to support it.</p>
 <p>In our next chapter, we'll explore how to actually communicate with these models – fine-tuned or not – and control their outputs effectively.</p><hr><h2>Visuals</h2><img src='03-finetuning.png' alt='03-finetuning.png'/></main>
 <nav><a href='index.html'>Home</a> | <a href='chapter-2-the-llm-ecosystem-navigating-the-model-zoo.html' title='Chapter 2: The LLM Ecosystem – Navigating the Model Zoo'>← Chapter 2</a> | <a href='chapter-4-interaction-output-control-driving-the-ai.html' title='Chapter 4: Interaction &amp; Output Control – Driving the AI'>Chapter 4 →</a></nav>
+<hr><div class='license'><h2>License</h2><pre style='white-space:pre-wrap; font-size:0.9em'>© 2025 Uli Hitzel  
+
+This book is released under the Creative Commons Attribution–NonCommercial 4.0 International license (CC BY-NC 4.0).  
+You may copy, distribute, and adapt the material for any non-commercial purpose, provided you give appropriate credit, include a link to the license, and indicate if changes were made. For commercial uses, please contact the author.</pre></div>
 </body>
 </html>
