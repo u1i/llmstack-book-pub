@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chapter 1: Foundation – The Engine Room – The LLM Stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0 1rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; }
+    nav { margin: 2rem 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+    nav a { text-decoration: none; color: #007acc; }
+    nav a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    .box { background:#f9f9f9; padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+    h1, h2, h3 { color: #333; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem; }
+</style>
+</head>
+<body>
+<nav><a href='index.html'>Home</a> | <a href='introduction-why-layers-matter.html' title='Introduction: Why Layers Matter'>← Introduction</a> | <a href='chapter-2-the-llm-ecosystem-navigating-the-model-zoo.html' title='Chapter 2: The LLM Ecosystem – Navigating the Model Zoo'>Chapter 2 →</a></nav>
+<main><h1 id="chapter-1-foundation-the-engine-room">Chapter 1: Foundation – The Engine Room</h1>
+<h2 id="how-ai-actually-works">How AI Actually Works</h2>
+<p>Let's start with a confession: when most people talk about "how AI works," they either dive into incomprehensible mathematics or hand-wave it away as "basically magic." We're going to do neither.</p>
+<p>Understanding the foundation of LLMs is like understanding how a car engine works. You don't need to build one from scratch, but knowing the basics helps you drive better, troubleshoot problems, and avoid getting ripped off at the mechanic.</p>
+<h3 id="breaking-language-into-lego-blocks-tokens">Breaking Language into Lego Blocks: Tokens</h3>
+<p>Here's the first surprise: AI doesn't actually read words the way you do. Instead, it breaks everything down into smaller pieces called <strong>tokens</strong>.</p>
+<p>Take the sentence: "The dog barked loudly."</p>
+<p>You see four words. The AI might see something like:</p>
+<ul>
+<li>"The"</li>
+<li>"dog"</li>
+<li>"bark"</li>
+<li>"ed"</li>
+<li>"loud"</li>
+<li>"ly"</li>
+</ul>
+<p>Why does it do this? Because language is messy. Consider the word "unbelievable." Should AI learn this as one unit, or understand it as "un-believe-able"? By breaking words into common chunks, AI can handle new words it's never seen before. Encounter "unsingable" for the first time? No problem – it knows "un," it knows "sing," it knows "able."</p>
+<p>This process is called <strong>tokenization</strong>, and it's the first step in how AI processes any text you give it. When AI generates a response, it's actually generating these tokens one by one, then assembling them back into readable text.</p>
+<p>There's even a special token that acts like a period at the end of a sentence – the <strong>End-of-Sequence (EOS) token</strong>. When the AI generates this, it knows to stop talking. Without it, AI would ramble on forever like that relative at family dinners.</p>
+<h3 id="the-transformer-where-the-magic-happens">The Transformer: Where the Magic Happens</h3>
+<p>At the heart of every modern LLM is something called a <strong>Transformer</strong>. Despite the sci-fi name, it's not a robot in disguise. It's a design that solved a fundamental problem: understanding how words relate to each other across long distances in text.</p>
+<p>Consider this sentence: "The cat, which had been sleeping on the warm windowsill all afternoon while the rain pattered against the glass, suddenly jumped."</p>
+<p>What jumped? The cat. But there are 20 words between "cat" and "jumped." Earlier AI systems would lose track. Transformers solved this with a mechanism called <strong>attention</strong>.</p>
+<h4 id="attention-the-cocktail-party-effect">Attention: The Cocktail Party Effect</h4>
+<p>Imagine you're at a busy cocktail party. Dozens of conversations are happening simultaneously, but you can focus on the one person talking to you while still being aware of the overall atmosphere. That's attention.</p>
+<p>For each word in a sentence, the Transformer doesn't just look at neighboring words. It simultaneously considers <em>every other word</em> and decides which ones are most relevant. It's asking, "To understand 'jumped,' which other words in this sentence matter most?" The answer: "cat" matters a lot, "windowsill" matters some, "pattered" matters very little.</p>
+<p>This happens through a clever system where each word generates three things:</p>
+<ul>
+<li>A <strong>Query</strong>: "What information am I looking for?"</li>
+<li>A <strong>Key</strong>: "What information do I have to offer?"</li>
+<li>A <strong>Value</strong>: "Here's my actual content"</li>
+</ul>
+<p>Words with matching Queries and Keys pay more attention to each other. It's like each word is both broadcasting what it needs and advertising what it can provide.</p>
+<h4 id="multi-head-attention-multiple-perspectives">Multi-Head Attention: Multiple Perspectives</h4>
+<p>Here's where it gets interesting. The Transformer doesn't just do this attention process once. It does it multiple times in parallel, each from a different "perspective."</p>
+<p>Think of it like analyzing a movie scene. One person might focus on the dialogue, another on the cinematography, another on the music. Each perspective captures something different. Similarly, one "attention head" might focus on grammar, another on meaning, another on tone. Combining all these perspectives gives the AI a rich, nuanced understanding of text.</p>
+<h4 id="position-matters">Position Matters</h4>
+<p>Since the Transformer looks at all words simultaneously, it needs another trick to remember word order. After all, "Dog bites man" and "Man bites dog" use the same words but mean very different things.</p>
+<p>The solution: <strong>positional embeddings</strong>. Think of these as seat numbers at a theater. Each word gets tagged with its position, so even though all words are processed at once, the system knows which came first, second, third, and so on.</p>
+<h3 id="the-scale-of-knowledge-parameters">The Scale of Knowledge: Parameters</h3>
+<p>When you hear that an LLM has "7 billion parameters" or "175 billion parameters," what does that actually mean?</p>
+<p>Parameters are essentially the AI's learned knowledge – millions or billions of numerical values that encode patterns, facts, and relationships the model discovered during training. Think of them as connections in a vast network, each holding a tiny piece of information.</p>
+<p>More parameters generally means:</p>
+<ul>
+<li>More capacity to learn complex patterns</li>
+<li>Better performance on diverse tasks</li>
+<li>Higher costs to train and run</li>
+<li>More memory and processing power needed</li>
+</ul>
+<p>But it's not just about size. A well-trained 7 billion parameter model can outperform a poorly trained 70 billion parameter model. Quality matters as much as quantity.</p>
+<h3 id="making-ai-practical-quantization">Making AI Practical: Quantization</h3>
+<p>Here's a problem: these billions of parameters take up enormous amounts of computer memory. A large model might need specialized hardware that costs tens of thousands of dollars to run.</p>
+<p>Enter <strong>quantization</strong> – a technique that's like compressing a high-resolution photo. Instead of storing each parameter as a very precise number (like 3.14159265...), we round it to something simpler (like 3.14). The model becomes smaller and faster, with only a tiny loss in quality.</p>
+<p>This is why you can now run decent AI models on your laptop or phone instead of needing a supercomputer.</p>
+<h3 id="how-ai-generates-responses-the-two-phase-process">How AI Generates Responses: The Two-Phase Process</h3>
+<p>When you send a prompt to an AI, two distinct phases happen:</p>
+<p><strong>Phase 1: Prefill (Reading)</strong></p>
+<p>The AI rapidly processes your entire prompt, building up its understanding of what you're asking. It's like speed-reading your question to grasp the full context before starting to answer.</p>
+<p><strong>Phase 2: Decode (Writing)</strong></p>
+<p>Now the AI generates its response, one token at a time. Each new token is predicted based on your original prompt plus everything it has already written. It's like writing a sentence where each new word must fit perfectly with everything that came before.</p>
+<p>This is why AI responses appear word by word rather than all at once – it's literally figuring out what to say next as it goes.</p>
+<h3 id="the-kv-cache-ais-short-term-memory">The KV Cache: AI's Short-Term Memory</h3>
+<p>During the decode phase, the AI faces a challenge. To generate each new token, it needs to consider all previous tokens. Without optimization, it would have to re-read everything from scratch for each new word – incredibly inefficient.</p>
+<p>The solution is the <strong>KV Cache</strong> (Key-Value Cache). It stores important calculations from previous tokens so they can be reused. It's like taking notes while reading a long document – instead of re-reading the whole thing to remember a detail, you check your notes.</p>
+<p>This seemingly technical detail is why AI can maintain long conversations efficiently without slowing to a crawl.</p>
+<h3 id="putting-it-all-together">Putting It All Together</h3>
+<p>These foundation elements – tokens, transformers, attention, parameters, quantization, and inference mechanics – work together to create what we experience as AI. Text comes in, gets broken into tokens, flows through layers of attention mechanisms guided by billions of parameters, and new tokens are generated one by one until a complete response emerges.</p>
+<p>It's not magic. It's not human-like consciousness. It's a sophisticated pattern-matching and generation system that has learned from vast amounts of text to produce remarkably coherent and useful outputs.</p>
+<p>Understanding this foundation helps explain both AI's impressive capabilities and its limitations. It can process and generate text with astounding skill because that's what it's designed to do. But it's not "thinking" in any human sense – it's performing incredibly complex calculations to predict the most likely next token based on patterns it has learned. When that prediction game drifts from the real world, we perceive the output as hallucination. In a poem or a story this creativity is welcome; in a facts-and-figures report it becomes a bug.</p>
+<p>In the next chapter, we'll explore the landscape of different models built on this foundation and why you might choose one over another.</p><hr><h2>Visuals</h2><img src='01-attention.png' alt='01-attention.png'/><img src='01-tokens.png' alt='01-tokens.png'/></main>
+<nav><a href='index.html'>Home</a> | <a href='introduction-why-layers-matter.html' title='Introduction: Why Layers Matter'>← Introduction</a> | <a href='chapter-2-the-llm-ecosystem-navigating-the-model-zoo.html' title='Chapter 2: The LLM Ecosystem – Navigating the Model Zoo'>Chapter 2 →</a></nav>
+</body>
+</html>
